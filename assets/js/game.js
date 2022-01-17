@@ -1,19 +1,27 @@
 // Checking JavaScript file is working correctly
 // window.alert("This is an alert! JavaScript is running!");
 
+// Game States
+// "WIN" - Player robot has defeated all enemy-robots
+//    * Fight all enemy-robots
+//    * Defeat each enemy-robot
+// "LOSE" - Player robot's health is zero or less
+// if the enemy-robot's health is zero or less, exit from the fight loop.
 
-var playerName = window.prompt("What is your robot's name")
+// Window Prompt asks for player's name
+var playerName = window.prompt("What is your robot's name?");
+
+// Player's Health
 var playerHealth = 100;
 var playerAttack = 10;
 var playerMoney = 10;
 
-// You can also log multiple values at once like this
-console.log(playerName, playerHealth, playerAttack)
+// Enemy's Health
+var enemyNames = ["Roberto", " Amy Andriod", " Robo Trumble"];
+var enemyHealth = 50;
+var enemyAttack = 12;
 
-var enemyName = "Roberto";
-var enemyHealth = 10;
-var enemyAttack = 60;
-
+// fight function
 var fight = function(enemyName) {
   while (playerHealth > 0 && enemyHealth > 0) {
     // ask player if they'd like to fight or run
@@ -72,7 +80,9 @@ var fight = function(enemyName) {
 
 for (var i = 0; i < enemyNames.length; i++) {
   if (playerHealth > 0) {
-    window.alert("Welcome to Robot Gladiators!" + ( i + 1 ) );
+    window.alert("Welcome to Robot Gladiators! " + ( i + 1 ) );
+  }  else {
+    window.alert("You have lost your robot in battle! Game Over!");
     break;
   }
   var pickedEnemyName = enemyNames[i];
